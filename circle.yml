@@ -25,4 +25,4 @@ deployment:
   production:
     branch: master
     commands:
-      - echo deploy
+      - git push ssh://55ec5d8289f5cf2415000070@shiro-pinemz.rhcloud.com/~/git/shiro.git/ master
