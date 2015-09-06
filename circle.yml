@@ -25,4 +25,6 @@ deployment:
   production:
     branch: master
     commands:
+      - make
       - git push ssh://55ec5d8289f5cf2415000070@shiro-pinemz.rhcloud.com/~/git/shiro.git/ master
+      - rsync -avzhe ssh ./bin/ 55ec5d8289f5cf2415000070@shiro-pinemz.rhcloud.com:/var/lib/openshift/55ec5d8289f5cf2415000070/app-root/repo/bin/
