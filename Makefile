@@ -1,5 +1,20 @@
-FLAGS =  --release
+FLAGS = --release
+DEPS  = crystal deps
+BUILD = crystal build
 
-all:
+.PHONY: build deps clean
+
+default: clean deps build
+
+build:
 	mkdir -p bin
-	crystal build src/connpass.cr -o bin/connpass $(FLAGS)
+	$(BUILD) src/connpass.cr -o bin/connpass $(FLAGS)
+
+deps:
+	$(DEPS)
+
+clean:
+	rm -rf bin
+	rm -rf .deps
+	rm -rf .crystal
+	rm -rf libs
