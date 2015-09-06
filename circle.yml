@@ -17,11 +17,9 @@ dependencies:
     - .deps
     - ~/.crenv
 
-build:
-  - make build
-
 test:
   override:
+    - make build
     - crystal spec
 
 deployment:
