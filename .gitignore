@@ -1,0 +1,7 @@
+.crystal
+.deps
+libs
+
+*.swo
+*.swp
+*~
