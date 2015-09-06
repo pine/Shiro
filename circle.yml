@@ -10,12 +10,15 @@ dependencies:
     - crystal --version
 
   override:
-    - crystal deps
+    - make deps
 
   cache_directories:
     - .crystal
     - .deps
     - ~/.crenv
+
+build:
+  - make build
 
 test:
   override:
