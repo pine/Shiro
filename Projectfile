@@ -1,0 +1,3 @@
+deps do
+  github "pine613/crystal-connpass"
+end

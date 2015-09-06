@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+CRYSTAL_BIN=$OPENSHIFT_DATA_DIR/crystal/bin/crystal
+LIBEVENT_PATH=$OPENSHIFT_DATA_DIR/libevent/lib
+GIT_PATH=$OPENSHIFT_DATA_DIR/git/bin
+
+CRYSTAL_DEPS_SRC=$OPENSHIFT_DATA_DIR/crystal/src/crystal/project_cli.cr
+CRYSTAL_DEPS_BIN=$OPENSHIFT_REPO_DIR/.crystal/crystal-run-deps.tmp
+
+PATH=$GIT_PATH:$PATH
+
+"$CRYSTAL_BIN" build --link-flags "-L$LIBEVENT_PATH" -o "$CRYSTAL_DEPS_BIN" "$CRYSTAL_DEPS_SRC"
+"$CRYSTAL_DEPS_BIN"
