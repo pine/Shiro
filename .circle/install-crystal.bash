@@ -1,4 +1,6 @@
-f type -p crystal >/dev/null 2>&1; then
+#!/bin/bash
+
+if type -p crystal >/dev/null 2>&1; then
     exit
 fi
 
