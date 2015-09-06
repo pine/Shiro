@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+CRYSTAL_BIN=$OPENSHIFT_DATA_DIR/crystal/bin/crystal
+LIBEVENT_PATH=$OPENSHIFT_DATA_DIR/libevent/lib
+
+exec "$CRYSTAL_BIN" build --link-flags "-L$LIBEVENT_PATH" $*
