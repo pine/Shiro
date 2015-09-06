@@ -5,3 +5,5 @@ libs
 *.swo
 *.swp
 *~
+
+/bin
