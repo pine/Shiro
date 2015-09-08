@@ -1,0 +1,3 @@
+*.json
+!team.sample.json
+!connpass.sample.json

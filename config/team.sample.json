@@ -1,0 +1,7 @@
+[
+  {
+    "id": "team_id",
+    "provider": "slack",
+    "token": "webhook_url"
+  }
+]

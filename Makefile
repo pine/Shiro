@@ -4,10 +4,13 @@ BUILD = crystal build
 
 .PHONY: build deps clean
 
-default: clean deps build
+default: all
+
+all: deps build
 
 build:
 	mkdir -p bin
+	$(BUILD) src/notify.cr -o bin/notify $(FLAGS)
 	$(BUILD) src/connpass.cr -o bin/connpass $(FLAGS)
 
 deps:

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "room_id",
+    "channel": "channel",
+    "username": "username",
+    "icon_url": "icon_url",
+    "team_id": "team_id"
+  }
+]
