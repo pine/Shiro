@@ -5,3 +5,5 @@ cd $OPENSHIFT_REPO_DIR
 make clean
 make deps DEPS="$OPENSHIFT_REPO_DIR/.openshift/script/crystal-deps"
 make build BUILD="$OPENSHIFT_REPO_DIR/.openshift/script/crystal-build"
+
+cp -r "$OPENSHIFT_DATA_DIR/config" -T "$OPENSHIFT_DATA_DIR/config"
