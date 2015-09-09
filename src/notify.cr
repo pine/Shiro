@@ -10,7 +10,7 @@ class Team
   })
 end
 
-class Room
+class Account
   json_mapping({
     id: String,
     channel: String,
@@ -23,13 +23,13 @@ end
 class Notification
   def initialize
     @teams = [] of Team
-    @rooms = [] of Room
+    @rooms = [] of Account
   end
 
   def notify(id, text)
     room = room_by_id(id)
 
-    if room.is_a? Room
+    if room.is_a? Account
       team = team_by_id(room.team_id)
 
       if team.is_a? Team
@@ -53,9 +53,9 @@ class Notification
     end
   end
 
-  def load_rooms(path)
+  def load_accounts(path)
     Dir.glob(path) do |file|
-      @rooms.concat Array(Room).from_json(File.read(file))
+      @rooms.concat Array(Account).from_json(File.read(file))
     end
   end
 
@@ -85,5 +85,5 @@ end
 
 notice = Notification.new
 notice.load_teams("config/team.json")
-notice.load_rooms("config/room/*.json")
+notice.load_accounts("config/account/*.json")
 notice.notify(id, text)

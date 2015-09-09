@@ -1,3 +1,2 @@
-/*.json
-!team.sample.json
-!connpass.sample.json
+*.json
+!*.sample.json
