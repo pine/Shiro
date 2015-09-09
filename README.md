@@ -4,7 +4,7 @@ Shiro is the very cute Slack notification bot.
 
 ## Development environments
 
-- [Crystal](http://crystal-lang.org/) (v0.7.7)
+- [Crystal](http://crystal-lang.org/) v0.7.7
 - [OpenShift](https://www.openshift.com/)
 
 ## License
