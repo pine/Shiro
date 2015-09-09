@@ -1,3 +1,4 @@
-The OpenShift `diy` cartridge documentation can be found at:
+Shiro
+-----
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#diy
+Shiro is the very cute Slack notification bot.
