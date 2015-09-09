@@ -1,2 +1,7 @@
 #!/bin/bash
 
+ID="shiro"
+TEXT="にい、白は再起動したの…。"
+
+cd "$OPENSHIFT_REPO_DIR"
+"./.openshift/script/crystal-env" "./bin/notify" --id "$ID" --text "$TEXT"
