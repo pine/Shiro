@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ID="shiro"
 TEXT="にい、白は起きてるの...。昼間は眠たいの...。"
 
