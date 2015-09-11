@@ -7,4 +7,8 @@ cd $OPENSHIFT_REPO_DIR
 make deps DEPS="$OPENSHIFT_REPO_DIR/.openshift/script/crystal-deps"
 make build BUILD="$OPENSHIFT_REPO_DIR/.openshift/script/crystal-build"
 
-cp -r "$OPENSHIFT_DATA_DIR/config" -T "$OPENSHIFT_REPO_DIR/config"
+if [ -d "$OPENSHIFT_REPO_DIR/config" ]; then
+    rm -rf "$OPENSHIFT_REPO_DIR/config"
+fi
+
+ln -s "$OPENSHIFT_DATA_DIR/config" "$OPENSHIFT_REPO_DIR/config"
