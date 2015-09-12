@@ -1,8 +1,9 @@
 FLAGS = --release
 DEPS  = crystal deps
 BUILD = crystal build
+SPEC  = crystal spec
 
-.PHONY: build deps clean
+.PHONY: build deps spec clean
 
 default: all
 
@@ -15,6 +16,9 @@ build:
 
 deps:
 	$(DEPS)
+
+spec:
+	$(SPEC)
 
 clean:
 	rm -rf bin
