@@ -5,7 +5,7 @@ echo "Running .openshift/action_hooks/start"
 
 # start webserver
 cd "$OPENSHIFT_REPO_DIR"
-PORT=$OPENSHIFT_DIY_PORT \
+PORT=$OPENSHIFT_DIY_PORT HOST=$OPENSHIFT_DIY_IP \
     nohup "./.openshift/script/crystal-env" "./bin/web_server" >> "$OPENSHIFT_LOG_DIR/web_server.log" 2>&1 &
 
 # notification
