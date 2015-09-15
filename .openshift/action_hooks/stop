@@ -3,4 +3,8 @@
 set -e
 echo "Running .openshift/action_hooks/stop"
 
-kill `ps -ef | grep web_server | grep -v grep | awk '{ print $2 }'` > /dev/null 2>&1
+PID=`ps -ef | grep web_server | grep -v grep | awk '{ print $2 }'`
+
+if [ "$PID" != "" ]; then
+    kill $PID
+fi
