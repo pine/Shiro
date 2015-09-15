@@ -13,6 +13,7 @@ build:
 	mkdir -p bin
 	$(BUILD) src/notify.cr -o bin/notify $(FLAGS)
 	$(BUILD) src/connpass.cr -o bin/connpass $(FLAGS)
+	$(BUILD) src/web_server.cr -o bin/web_server $(FLAGS)
 
 deps:
 	$(DEPS)
