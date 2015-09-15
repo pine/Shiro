@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+echo "Running .openshift/action_hooks/build"
 
 cd $OPENSHIFT_REPO_DIR
 
