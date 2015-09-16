@@ -1,7 +1,3 @@
-machine:
-  ruby:
-    version: 2.2.2
-
 dependencies:
   pre:
     - .circle/install-crenv.bash
@@ -20,7 +16,7 @@ dependencies:
 test:
   override:
     - make build
-    - crystal spec
+    - make spec
 
 deployment:
   production:
