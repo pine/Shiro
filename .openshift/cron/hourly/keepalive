@@ -2,8 +2,6 @@
 
 set -e
 
-PROTOCOL=http
-HOST=$OPENSHIFT_DIY_IP:$OPENSHIFT_DIY_PORT
-URL=$PROTOCOL://$HOST/internal/keepalive
+URL="http://shiro-pinemz.rhcloud.com/internal/keepalive"
 
 curl $URL -X GET
