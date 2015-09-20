@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+PROTOCOL=http
+HOST=$OPENSHIFT_DIY_IP:$OPENSHIFT_DIY_PORT
+URL=$PROTOCOL://$HOST/internal/keepalive
+
+curl $URL -X GET
