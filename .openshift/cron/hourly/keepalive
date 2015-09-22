@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-
-URL="http://shiro-pinemz.rhcloud.com/internal/keepalive"
-
-curl $URL -X GET
