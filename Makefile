@@ -24,5 +24,6 @@ spec:
 clean:
 	rm -rf bin
 	rm -rf .deps
+	rm -rf .shards
 	rm -rf .crystal
 	rm -rf libs
