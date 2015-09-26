@@ -14,4 +14,8 @@ dependencies:
     github: manastech/crystal_slack
     version: 0.1.0
 
+  mysql:
+    github: waterlink/crystal-mysql
+    version: 0.2.0
+
 license: MIT
