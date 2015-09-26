@@ -1,5 +1,19 @@
 #!/bin/bash
 
+set -e
+echo "Running .openshift/action_hooks/start"
+
+# stop webserver
+cd "$OPENSHIFT_REPO_DIR"
+"./.openshift/action_hooks/stop"
+
+# start webserver
+cd "$OPENSHIFT_REPO_DIR"
+PORT=$OPENSHIFT_DIY_PORT HOST=$OPENSHIFT_DIY_IP \
+    nohup "./.openshift/script/crystal-env" "./bin/web_server" \
+    >> "$OPENSHIFT_LOG_DIR/web_server.log" 2>&1 &
+
+# notification
 ID="shiro"
 TEXT="にい、白は再起動したの...。"
 

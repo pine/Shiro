@@ -4,14 +4,14 @@ Shiro is the very cute Slack notification bot.
 
 ## Development environments
 
-- [Crystal](http://crystal-lang.org/) v0.7.7
+- [Crystal](http://crystal-lang.org/) v0.8.0
 - [OpenShift](https://www.openshift.com/)
 
 ## Build & Test
 
 ```
 $ crystal --version
-Crystal 0.7.7 [170f859] (Sat Sep  5 02:53:51 UTC 2015)
+Crystal 0.8.0 [e363b63] (Sat Sep 19 12:18:15 UTC 2015)
 
 $ make
 $ make spec

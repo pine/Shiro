@@ -1,6 +1,0 @@
-deps do
-  github "pine613/crystal-connpass"
-  github "pine613/crystal-qiita"
-  github "manastech/crystal_slack"
-  github "waterlink/crystal-mysql"
-end

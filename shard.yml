@@ -1,0 +1,13 @@
+name: shiro
+version: 0.0.2
+
+dependencies:
+  connpass:
+    github: pine613/crystal-connpass
+    branch: master
+
+  slack:
+    github: manastech/crystal_slack
+    version: 0.1.0
+
+license: MIT

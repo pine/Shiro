@@ -1,7 +1,9 @@
 #!/bin/bash
 
-if type -p crystal >/dev/null 2>&1; then
-    exit
+CRYSTAL_VERSION=`cat .crystal-version`
+
+if crenv versions | grep $CRYSTAL_VERSION >/dev/null 2>&1; then
+    exit 0
 fi
 
-crenv install `cat .crystal-version`
+crenv install $CRYSTAL_VERSION

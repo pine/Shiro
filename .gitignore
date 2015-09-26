@@ -1,6 +1,10 @@
 .crystal
 .deps
+.shards
 libs
+
+.deps.lock
+shard.lock
 
 *.swo
 *.swp

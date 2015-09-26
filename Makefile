@@ -14,6 +14,7 @@ build:
 	$(BUILD) src/notify.cr -o bin/notify $(FLAGS)
 	$(BUILD) src/connpass.cr -o bin/connpass $(FLAGS)
 	$(BUILD) src/qiita.cr -o bin/qiita $(FLAGS)
+	$(BUILD) src/web_server.cr -o bin/web_server $(FLAGS)
 
 deps:
 	$(DEPS)
@@ -24,5 +25,6 @@ spec:
 clean:
 	rm -rf bin
 	rm -rf .deps
+	rm -rf .shards
 	rm -rf .crystal
 	rm -rf libs
