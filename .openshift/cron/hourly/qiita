@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -e
-
-cd "$OPENSHIFT_REPO_DIR"
-"./.openshift/script/crystal-env" "./bin/qiita"
