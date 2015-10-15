@@ -17,6 +17,42 @@ $ make
 $ make spec
 ```
 
+## Commands
+
+### `notify`
+Notify mesage to Slack room
+
+```
+$ ./bin/notify --help
+Usage: notify [arguments]
+    --id ID                          Room ID
+    --text TEXT                      Text
+    -h, --help                       Show help
+
+$ ./bin/notify --id ID --text TEXT
+```
+
+### `web_server`
+Simple HTTP web server to keepalive OpenShift
+
+```
+$ PORT=8080 HOST=0.0.0.0 ./bin/web_server
+```
+
+### `connpass`
+Connpass notification bot for staff. `connpass` command is called by Cron.
+
+```
+$ ./bin/connpass
+```
+
+### `qiita`
+Qiita notification bot. `qiita` command is called by by Cron.
+
+```
+$ ./bin/qiita
+```
+
 ## License
 
 MIT License (MIT)
