@@ -4,11 +4,11 @@ version: 0.0.2
 dependencies:
   connpass:
     github: pine613/crystal-connpass
-    branch: master
+    version: 0.1.0
 
   qiita:
     github: pine613/crystal-qiita
-    branch: master
+    version: 0.1.0
 
   slack:
     github: manastech/crystal_slack
