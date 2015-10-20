@@ -10,22 +10,6 @@ unless ENV.has_key? "HOST"
   exit 1
 end
 
-module HTTP
-  class Server
-    def initialize(@host, @port, &@handler : Request -> Response)
-    end
-
-    def listen
-      @host.try do |host|
-        server = TCPServer.new(host, @port)
-        until @wants_close
-          spawn handle_client(server.accept)
-        end
-      end
-    end
-  end
-end
-
 host = ENV["HOST"]
 port = ENV["PORT"].to_i
 server = HTTP::Server.new(host, port) do |req|

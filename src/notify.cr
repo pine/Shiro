@@ -3,7 +3,7 @@ require "slack"
 require "option_parser"
 
 class Team
-  json_mapping({
+  JSON.mapping({
     id: String,
     provider: String,
     token: String,
@@ -11,7 +11,7 @@ class Team
 end
 
 class Account
-  json_mapping({
+  JSON.mapping({
     id: String,
     channel: String,
     username: String,

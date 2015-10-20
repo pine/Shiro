@@ -4,14 +4,14 @@ require "json"
 module Connpass
   module Config
     class Event
-      json_mapping({
+      JSON.mapping({
         notice_id: String,
         event_id: Int32
       })
     end
 
     class Lang
-      json_mapping({
+      JSON.mapping({
         suffix: String,
         limit: String,
         accepted: String,
