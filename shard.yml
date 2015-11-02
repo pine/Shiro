@@ -4,15 +4,15 @@ version: 0.0.2
 dependencies:
   connpass:
     github: pine613/crystal-connpass
-    version: 0.1.0
+    version: 0.2.0
 
   qiita:
     github: pine613/crystal-qiita
-    version: 0.1.0
+    version: 0.2.0
 
   slack:
     github: manastech/crystal_slack
-    version: 0.1.0
+    version: 0.2.0
 
   mysql:
     github: waterlink/crystal-mysql

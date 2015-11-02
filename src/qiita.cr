@@ -4,7 +4,7 @@ require "qiita"
 module Qiita
   module Config
     class Query
-      json_mapping({
+      JSON.mapping({
         notice_id: String,
         query: String,
         since: String, # YYYY-mm-ddThh:mm:ss+tz
