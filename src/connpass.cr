@@ -53,6 +53,11 @@ module Connpass
 
     private def create_message(result)
       result.events[0]?.try do |event|
+        if ended_at = event.ended_at
+          time = Time.parse(ended_at, "%Y-%m-%dT%H:%M:%S%z")
+          break if Time.now > time
+        end
+
         @lang.try do |lang|
           limit    = "#{lang.limit}: #{event.limit.to_s} #{lang.suffix}"
           accepted = "#{lang.accepted}: #{event.accepted.to_s} #{lang.suffix}"
