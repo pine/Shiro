@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+minute=$(date +%M)
+
+# every 5 minutes
+if [[ $minute =~ [05]$ ]]; then
+    cd "$OPENSHIFT_REPO_DIR"
+    "./.openshift/script/crystal-env" "./bin/qiita"
+fi
