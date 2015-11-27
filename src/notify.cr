@@ -2,6 +2,8 @@ require "json"
 require "slack"
 require "option_parser"
 
+require "./notify/*"
+
 class Team
   JSON.mapping({
     id: String,
@@ -14,8 +16,8 @@ class Account
   JSON.mapping({
     id: String,
     channel: String,
-    username: String,
-    icon_url: String,
+    username: {type: String, nilable: true },
+    icon_url: {type: String, nilable: true },
     team_id: String,
   })
 end
@@ -26,7 +28,7 @@ class Notification
     @rooms = [] of Account
   end
 
-  def notify(id, text)
+  def notify(id, text, url)
     room = room_by_id(id)
 
     if room.is_a? Account
@@ -35,13 +37,18 @@ class Notification
       if team.is_a? Team
         case team.provider
         when "slack"
+          text += "\n#{url}" if url.size > 0
+
           slack = Slack::IncomingWebHook.new(
             text,
             channel: room.channel,
-            icon_url: room.icon_url,
-            username: room.username,
+            icon_url: room.icon_url || "",
+            username: room.username || "",
           )
           slack.send_to team.token
+
+        when "irori"
+          Irori.send(team.token, room.channel, text, url) if url.size > 0
         end
       end
     end
@@ -72,11 +79,13 @@ end
 
 id   = ""
 text = ""
+url  = ""
 
 OptionParser.parse! do |parser|
   parser.banner = "Usage: notify [arguments]"
   parser.on("--id ID", "Room ID") {|x| id = x }
   parser.on("--text TEXT", "Text") {|x| text = x }
+  parser.on("--url URL", "URL") {|x| url = x }
   parser.on("-h", "--help", "Show help") do
     puts parser
     exit
@@ -86,4 +95,4 @@ end
 notice = Notification.new
 notice.load_teams("config/team.json")
 notice.load_accounts("config/account/*.json")
-notice.notify(id, text)
+notice.notify(id, text, url)

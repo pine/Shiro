@@ -33,7 +33,7 @@ module Qiita
           next if created_at < since
           unless contains_db(item.id, query.notice_id)
             insert_db(item.id, query.notice_id)
-            yield query.notice_id, create_text(item)
+            yield query.notice_id, create_text(item), item.url
           end
         end
       end
@@ -75,7 +75,7 @@ module Qiita
     end
 
     private def create_text(item)
-      "#{item.title} by #{item.user.id}\n#{item.url}"
+      "#{item.title} by #{item.user.id}"
     end
   end
 end
@@ -88,6 +88,6 @@ require "./util/mysql"
 
 notice = Qiita::Notification.new(Util.db)
 notice.load_queries("config/qiita/query.json")
-notice.notify do |id, text|
-  Util.notify(id, text)
+notice.notify do |id, text, url|
+  Util.notify(id, text, url)
 end
